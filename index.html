@@ -60,29 +60,30 @@ button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-vis
 @media(max-width:430px){.grid{grid-template-columns:1fr}.card{min-height:150px}.top{align-items:flex-start}.search{gap:7px;padding:8px 11px}.search input{font-size:.9rem}.stats{font-size:.78rem}.head{margin-top:22px}.chips{gap:7px}.chip{padding:7px 11px;font-size:.86rem}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.01ms!important}}
 
-.filterbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:0 0 22px}
-.filter-trigger{display:flex;align-items:center;gap:13px;text-align:right;min-width:0;max-width:100%;padding:12px 15px;background:linear-gradient(130deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:17px;color:var(--text);box-shadow:0 8px 24px #0001}
-.filter-trigger:hover{transform:translateY(-2px);border-color:var(--a);box-shadow:0 12px 28px #8b7cff18}
-.filter-trigger-icon{display:grid;place-items:center;flex:0 0 42px;height:42px;border-radius:13px;background:linear-gradient(135deg,#8b7cff30,#43dfd020);color:var(--a);font-size:25px}
+.filterbar{display:flex;align-items:center;justify-content:flex-start;gap:8px;margin:0 0 18px}
+.filter-trigger{display:inline-flex;align-items:center;gap:9px;text-align:right;min-width:0;max-width:100%;width:auto;padding:8px 11px;background:var(--panel);border:1px solid var(--line);border-radius:13px;color:var(--text);box-shadow:0 4px 14px #0000000b;transition:background .2s,border-color .2s}
+.filter-trigger:hover{border-color:var(--a);background:var(--panel2)}
+.filter-trigger-icon{display:grid;place-items:center;flex:0 0 32px;height:32px;border-radius:10px;background:linear-gradient(135deg,#8b7cff25,#43dfd015);color:var(--a);font-size:20px}
 .filter-trigger b,.filter-trigger small{display:block}
-.filter-trigger b{font-size:.94rem}.filter-trigger small{font-size:.78rem;color:var(--muted);margin-top:2px}
-.filter-chevron{font-size:1.4rem;color:var(--muted);margin-right:8px}
-.filter-count{font-size:.83rem;color:var(--muted);white-space:nowrap}
+.filter-trigger b{font-size:.84rem;font-weight:750;line-height:1.35}.filter-trigger small{font-size:.7rem;color:var(--muted);margin-top:1px}
+.filter-chevron{font-size:1.1rem;color:var(--muted);margin-right:2px}
+.filter-count{font-size:.75rem;color:var(--muted);white-space:nowrap}
 .filter-modal{z-index:30}
-.filter-box{width:min(520px,100%)}
-.filter-hint{margin:0 0 15px}
-.filter-options{display:grid;gap:9px}
-.filter-option{display:flex;align-items:center;gap:12px;width:100%;text-align:right;padding:12px;border-radius:14px;border:1px solid var(--line);background:var(--bg);color:var(--text)}
-.filter-option:hover{border-color:var(--a);transform:translateY(-1px)}
+.filter-box{width:min(480px,100%)}
+.filter-hint{margin:0 0 12px}
+.filter-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.filter-option{display:flex;align-items:center;gap:9px;min-width:0;width:100%;text-align:right;padding:10px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--text)}
+.filter-option:hover{border-color:var(--a)}
 .filter-option.selected{border-color:var(--a);background:linear-gradient(110deg,#8b7cff1c,#43dfd009);box-shadow:inset 0 0 0 1px #8b7cff20}
-.option-icon{display:grid;place-items:center;flex:0 0 40px;height:40px;border-radius:12px;background:var(--panel2);font-size:21px}
+.option-icon{display:grid;place-items:center;flex:0 0 32px;height:32px;border-radius:10px;background:var(--panel2);font-size:18px}
 .filter-option b,.filter-option small{display:block}
-.filter-option b{font-size:.9rem}.filter-option small{font-size:.75rem;color:var(--muted);margin-top:2px}
-.option-check{display:grid;place-items:center;width:24px;height:24px;border:1px solid var(--line);border-radius:50%;margin-right:auto;color:transparent;flex:0 0 auto}
+.filter-option b{font-size:.83rem}.filter-option small{font-size:.69rem;color:var(--muted);margin-top:2px}
+.option-check{display:grid;place-items:center;width:20px;height:20px;border:1px solid var(--line);border-radius:50%;margin-right:auto;color:transparent;flex:0 0 auto}
 .filter-option.selected .option-check{background:var(--a);border-color:var(--a);color:#fff}
-.filter-done{width:100%;justify-content:center;margin:16px 0 0;min-height:48px}
-@media(max-width:700px){.filterbar{margin-bottom:18px}.filter-trigger{flex:1}.filter-count{font-size:.75rem}.filter-modal{align-items:flex-end}.filter-box{width:100%;max-height:88dvh}.filter-options{gap:8px}.filter-option{padding:11px}.filter-option small{font-size:.72rem}}
-</style></head><body><header class="wrap nav"><a class="brand" href="#" style="text-decoration:none;color:var(--text)"><span class="logo">✳</span>ابزار<span>ینو</span></a><nav class="navlinks"><a href="#tools">ابزارها</a><a href="#about">درباره ما</a></nav><button id="theme" class="theme">☼ پوسته</button></header>
+.filter-done{width:100%;justify-content:center;margin:12px 0 0;min-height:44px}
+@media(max-width:700px){.filterbar{margin-bottom:16px}.filter-trigger{flex:0 1 auto}.filter-count{font-size:.7rem}.filter-modal{align-items:flex-end}.filter-box{width:100%;max-height:82dvh}.filter-options{gap:7px}.filter-option{padding:9px}.filter-option small{font-size:.68rem}}
+@media(max-width:380px){.filter-count{display:none}.filter-options{grid-template-columns:1fr}}
+</style></head><body><header class="wrap nav"><a class="brand" href="#" style="text-decoration:none;color:var(--text)"><span class="logo">✳</span>ابزار<span>ینو</span></a><nav class="navlinks"><a href="#tools">ابزارها</a><a href="#about">درباره ما</a></nav><button id="theme" class="theme" type="button">☼ لایت مود</button></header>
 <main><section class="hero wrap"><div class="pill">✦ جعبه‌ابزار دیجیتال شما</div><h1>کارهای روزمره،<br><span class="gradient">ساده‌تر از همیشه</span></h1><p class="sub">ابزارهای رایگان و کاربردی فارسی؛ سریع، ساده و در دسترس. ابزار موردنیازت رو پیدا کن و بدون نصب برنامه ازش استفاده کن.</p><div class="search"><span>⌕</span><input id="search" placeholder="دنبال چه ابزاری می‌گردی؟ مثلاً محاسبه درصد..."></div><div class="stats"><span>✦ <b id="count">۱۲ ابزار</b></span><span>◈ بدون نیاز به نصب</span><span>⌁ مناسب موبایل و کامپیوتر</span></div></section>
 <section class="wrap" id="tools"><div class="head"><div><h2>ابزارهای کاربردی</h2><p>هر چیزی که لازم داری، همین‌جا پیدا می‌شه.</p></div><span class="muted" id="shown">۱۲ ابزار</span></div><div class="filterbar"><button class="filter-trigger" id="filterOpen" aria-haspopup="dialog" aria-controls="filterModal"><span class="filter-trigger-icon">☷</span><span><b>دسته‌بندی ابزارها</b><small id="activeFilterLabel">نمایش همه ابزارها</small></span><span class="filter-chevron">⌄</span></button><span class="filter-count" id="filterCount">۶ دسته</span></div><div class="grid" id="grid"></div><div class="empty" id="empty">ابزاری پیدا نشد؛ عبارت دیگری امتحان کن.</div></section><section class="wrap" id="about"><div class="note"><b>💡 ساده، رایگان و تا جای ممکن خصوصی</b><p>بسیاری از ابزارهای ابزارینو مستقیماً داخل مرورگر اجرا می‌شن؛ اطلاعاتی که وارد می‌کنی برای این محاسبات به سرور ارسال نمی‌شن.</p></div></section></main><footer class="foot"><div class="wrap foot-inner"><div><div class="footer-brand">✳ ابزارینو</div><div class="footer-sub">ابزارهای کوچک برای کارهای بزرگ</div></div><a class="powered" href="https://alishams.ir" target="_blank" rel="noopener noreferrer" aria-label="Powered by Alishams.ir">POWERED BY ALISHAMS.IR</a></div></footer>
 <div class="modal" id="modal" role="dialog" aria-modal="true"><div class="box"><div class="mh"><h2 id="title">ابزار</h2><button class="close" id="close">×</button></div><div class="mb" id="body"></div></div></div>
@@ -125,7 +126,7 @@ function hideFilter(){filterModal.classList.remove('show');document.body.style.o
 function applyFilter(){cat=$('#filterOptions .selected')?.dataset.cat||'همه';$('#activeFilterLabel').textContent=cat==='همه'?'نمایش همه ابزارها':'فقط دستهٔ '+cat;$('#filterCount').textContent=cat==='همه'?'۶ دسته':'فیلتر فعال';hideFilter();render()}
 $('#filterOpen').onclick=showFilter;$('#filterClose').onclick=hideFilter;filterModal.onclick=e=>{if(e.target===filterModal)hideFilter()};
 $('#filterOptions').onclick=e=>{let b=e.target.closest('[data-cat]');if(!b)return;document.querySelectorAll('#filterOptions .filter-option').forEach(x=>x.classList.toggle('selected',x===b))};
-$('#filterDone').onclick=applyFilter;$('#theme').onclick=()=>{document.body.classList.toggle('light');localStorage.setItem('abzarino-theme',document.body.classList.contains('light')?'light':'dark')};if(localStorage.getItem('abzarino-theme')==='light')document.body.classList.add('light');
+$('#filterDone').onclick=applyFilter;function updateThemeLabel(){const light=document.body.classList.contains('light');$('#theme').textContent=light?'☾ دارک مود':'☼ لایت مود';$('#theme').setAttribute('aria-label',light?'تغییر به دارک مود':'تغییر به لایت مود')}$('#theme').onclick=()=>{document.body.classList.toggle('light');localStorage.setItem('abzarino-theme',document.body.classList.contains('light')?'light':'dark');updateThemeLabel()};if(localStorage.getItem('abzarino-theme')==='light')document.body.classList.add('light');updateThemeLabel();
 function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}function fmt(n){return new Intl.NumberFormat('fa-IR',{maximumFractionDigits:6}).format(n)}function toast(s){$('#toast').textContent=s;$('#toast').classList.add('show');setTimeout(()=>$('#toast').classList.remove('show'),2200)}function field(label,id,type,placeholder,value){return '<div class="field"><label for="'+id+'">'+label+'</label><input id="'+id+'" type="'+(type||'text')+'" placeholder="'+(placeholder||'')+'" value="'+(value||'')+'"></div>'}function area(label,id,placeholder){return '<div class="field full"><label for="'+id+'">'+label+'</label><textarea id="'+id+'" placeholder="'+(placeholder||'متن را وارد کن')+'"></textarea></div>'}function result(s){$('#result').innerHTML=s;$('#result').classList.add('show')}async function copy(s){try{await navigator.clipboard.writeText(s);toast('کپی شد!')}catch(e){toast('امکان کپی خودکار نیست؛ متن را انتخاب کن.')}}const modal=$('#modal');
 function open(id){let t=T.find(x=>x.id===id),f='';$('#title').textContent=t.name;
 if(id==='percent')f='<div class="fields">'+field('عدد اصلی','base','number','مثلاً 250')+field('درصد','pct','number','مثلاً 15')+'</div><button class="primary" id="calc">محاسبه</button><div id="result" class="result"></div>';
