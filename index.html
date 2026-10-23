@@ -240,6 +240,17 @@ body.light .privacy-live{background:#078f86;box-shadow:0 0 0 4px #078f861c,0 0 1
 .filter-options .option-check{font-size:.75rem}
 .filter-options .option-icon i{line-height:1}
 
+
+/* Consistent professional vector icons on all tool cards */
+.card .ico{display:grid;place-items:center}
+.card .ico>i{position:relative;z-index:1;display:inline-block;font-size:1.65rem;line-height:1;color:var(--a);filter:drop-shadow(0 3px 9px #8b7cff30);transition:color .3s,filter .3s,transform .35s}
+.card:nth-child(3n+2) .ico>i{color:#71d8ca}
+.card:nth-child(3n+3) .ico>i{color:#b7a5ff}
+.card:hover .ico>i,.card:focus-visible .ico>i{color:#fff;filter:drop-shadow(0 0 9px #8b7cff99);transform:scale(1.12) rotate(-5deg)}
+body.light .card:hover .ico>i,body.light .card:focus-visible .ico>i{color:#6552d8}
+@media(max-width:600px){.card .ico>i{font-size:1.55rem}}
+@media(prefers-reduced-motion:reduce){.card .ico>i{transition:none!important}}
+
 </style></head><body><header class="wrap nav"><a class="brand" href="#" style="text-decoration:none;color:var(--text)"><span class="logo">✳</span>ابزار<span>ینو</span></a><nav class="navlinks"><a href="#tools">ابزارها</a><a href="https://alishams.ir" target="_blank" rel="noopener noreferrer">درباره ما</a></nav><button id="theme" class="theme" type="button">☼ لایت مود</button></header>
 <main><section class="hero wrap"><canvas id="zenShader" aria-hidden="true"></canvas><div class="pill">✦ جعبه‌ابزار دیجیتال شما</div><h1>کارهای روزمره،<br><span class="gradient">ساده‌تر از همیشه</span></h1><p class="sub">ابزارهای رایگان و کاربردی فارسی؛ سریع، ساده و در دسترس.<br>ابزار موردنیازت رو بدون نصب برنامه پیدا و استفاده کن.</p><div class="search"><span>⌕</span><input id="search" placeholder="دنبال چه ابزاری می‌گردی؟ مثلاً محاسبه درصد..."></div><div class="stats"><span>✦ <b id="count">۱۲ ابزار</b></span><span>◈ بدون نیاز به نصب</span><span>✧ همیشه در دسترس</span></div></section>
 <section class="wrap" id="tools"><div class="head"><div><h2>ابزارهای کاربردی</h2><p>هر چیزی که لازم داری، همین‌جا پیدا می‌شه.</p></div><span class="muted" id="shown">۱۲ ابزار</span></div><div class="filterbar"><button class="filter-trigger" id="filterOpen" aria-haspopup="dialog" aria-controls="filterModal" aria-expanded="false"><span class="filter-trigger-icon" aria-hidden="true"><i class="fa-solid fa-sliders filter-grid-symbol"></i></span><span class="filter-trigger-copy"><b>دسته‌بندی ابزارها</b></span><span class="filter-chevron" aria-hidden="true"><span class="chevron-stem"></span><span class="chevron-stem"></span></span></button><span class="filter-count" id="filterCount">۶ دسته</span></div><div class="grid" id="grid"></div><div class="empty" id="empty">ابزاری پیدا نشد؛ عبارت دیگری امتحان کن.</div></section><section class="wrap" id="about"><div class="note privacy-note"><div class="privacy-orbit" aria-hidden="true"><span class="privacy-icon">⌁</span><i></i><i></i><i></i></div><div class="privacy-copy"><span class="privacy-label"><span class="privacy-live"></span> حریم خصوصی در اولویت</span><b>ساده، رایگان و تا جای ممکن خصوصی</b><p>بسیاری از ابزارهای ابزارینو مستقیماً داخل مرورگر اجرا می‌شن؛ اطلاعاتی که وارد می‌کنی برای این محاسبات به سرور ارسال نمی‌شن.</p></div><span class="privacy-spark" aria-hidden="true">✳</span></div></section></main><footer class="foot"><div class="wrap foot-inner"><div><div class="footer-brand">✳ ابزارینو</div><div class="footer-sub">ابزارهای کوچک برای کارهای بزرگ</div></div><a class="powered" href="https://alishams.ir" target="_blank" rel="noopener noreferrer" aria-label="Powered by Alishams.ir">POWERED BY ALISHAMS.IR</a></div></footer>
@@ -262,18 +273,18 @@ body.light .privacy-live{background:#078f86;box-shadow:0 0 0 4px #078f861c,0 0 1
 </div><div id="toast" class="toast"></div>
 <script>
 const T=[
-['percent','محاسبه درصد','درصد یک عدد رو سریع حساب کن.','％','محاسبات','پرکاربرد'],
-['discount','محاسبه تخفیف','قیمت نهایی و میزان صرفه‌جویی بعد از تخفیف.','🏷️','محاسبات','سریع'],
-['average','میانگین اعداد','میانگین چند عدد رو محاسبه کن.','∑','محاسبات',''],
-['grade','محاسبه معدل','معدل وزنی درس‌ها با نمره و تعداد واحد.','🎓','دانشجویی','ویژه دانشجو'],
-['text','شمارشگر متن','تعداد کلمه، نویسه، جمله و پاراگراف.','¶','متن','پرکاربرد'],
-['clean','پاک‌سازی متن','حذف فاصله‌های اضافه و خطوط خالی.','🧹','متن',''],
-['digits','تبدیل اعداد','تبدیل اعداد فارسی و انگلیسی در متن.','۱۲۳','متن',''],
-['password','ساخت رمز تصادفی','ساخت رمز با طول و ترکیب دلخواه.','🔐','روزمره','خصوصی'],
-['unit','تبدیل واحد طول','میلی‌متر، سانتی‌متر، متر و کیلومتر.','📏','محاسبات',''],
-['date','فاصله دو تاریخ','محاسبه تعداد روز بین دو تاریخ میلادی.','📅','روزمره',''],
-['image','تغییر اندازه تصویر','تغییر ابعاد تصویر مستقیماً در مرورگر.','🖼️','تصویر','بدون آپلود'],
-['todo','فهرست کارهای روزانه','ثبت کارها و علامت‌گذاری کارهای انجام‌شده.','✓','روزمره','ذخیره محلی']
+['percent','محاسبه درصد','درصد یک عدد رو سریع حساب کن.','<i class="fa-solid fa-percent" aria-hidden="true"></i>','محاسبات','پرکاربرد'],
+['discount','محاسبه تخفیف','قیمت نهایی و میزان صرفه‌جویی بعد از تخفیف.','<i class="fa-solid fa-tags" aria-hidden="true"></i>','محاسبات','سریع'],
+['average','میانگین اعداد','میانگین چند عدد رو محاسبه کن.','<i class="fa-solid fa-square-root-variable" aria-hidden="true"></i>','محاسبات',''],
+['grade','محاسبه معدل','معدل وزنی درس‌ها با نمره و تعداد واحد.','<i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>','دانشجویی','ویژه دانشجو'],
+['text','شمارشگر متن','تعداد کلمه، نویسه، جمله و پاراگراف.','<i class="fa-solid fa-file-lines" aria-hidden="true"></i>','متن','پرکاربرد'],
+['clean','پاک‌سازی متن','حذف فاصله‌های اضافه و خطوط خالی.','<i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>','متن',''],
+['digits','تبدیل اعداد','تبدیل اعداد فارسی و انگلیسی در متن.','<i class="fa-solid fa-arrow-right-arrow-left" aria-hidden="true"></i>','متن',''],
+['password','ساخت رمز تصادفی','ساخت رمز با طول و ترکیب دلخواه.','<i class="fa-solid fa-shield-halved" aria-hidden="true"></i>','روزمره','خصوصی'],
+['unit','تبدیل واحد طول','میلی‌متر، سانتی‌متر، متر و کیلومتر.','<i class="fa-solid fa-ruler-combined" aria-hidden="true"></i>','محاسبات',''],
+['date','فاصله دو تاریخ','محاسبه تعداد روز بین دو تاریخ میلادی.','<i class="fa-solid fa-calendar-days" aria-hidden="true"></i>','روزمره',''],
+['image','تغییر اندازه تصویر','تغییر ابعاد تصویر مستقیماً در مرورگر.','<i class="fa-solid fa-image" aria-hidden="true"></i>','تصویر','بدون آپلود'],
+['todo','فهرست کارهای روزانه','ثبت کارها و علامت‌گذاری کارهای انجام‌شده.','<i class="fa-solid fa-list-check" aria-hidden="true"></i>','روزمره','ذخیره محلی']
 ].map(a=>({id:a[0],name:a[1],desc:a[2],icon:a[3],cat:a[4],tag:a[5]}));
 const $=s=>document.querySelector(s);let cat='همه';
 function render(){let q=$('#search').value.toLocaleLowerCase('fa').trim();let list=T.filter(t=>(cat==='همه'||t.cat===cat)&&(t.name+' '+t.desc+' '+t.cat).toLocaleLowerCase('fa').includes(q));$('#grid').innerHTML=list.map(t=>'<button class="card" data-id="'+t.id+'"><div class="top"><span class="ico">'+t.icon+'</span><span class="tag">'+t.tag+'</span></div><h3>'+t.name+'</h3><p>'+t.desc+'</p><div class="go">باز کردن ابزار ←</div></button>').join('');$('#empty').style.display=list.length?'none':'block';$('#shown').textContent=list.length+' ابزار';$('#count').textContent=T.length+' ابزار'}
