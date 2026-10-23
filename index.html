@@ -268,6 +268,18 @@ body.light h1 .gradient{
 }
 @media(prefers-reduced-motion:reduce){h1 .gradient{animation:none!important}}
 
+
+/* Improve hero stats contrast in light mode */
+body.light .hero .stats{color:#37334b!important}
+body.light .hero .stats span{color:#37334b!important;text-shadow:none!important}
+body.light .hero .stats b{color:#30265f!important;font-weight:800}
+body.light .hero .stats span:nth-child(1)>*{color:#5140a0!important}
+body.light .hero .stats span:nth-child(2){color:#3d5265!important}
+body.light .hero .stats span:nth-child(3){color:#176d68!important}
+body.light .hero .stats span:nth-child(1){color:#5140a0!important}
+body.light .hero .stats span:nth-child(2)::first-letter{color:#3d5265}
+body.light .hero .stats span:nth-child(3)::first-letter{color:#176d68}
+
 </style></head><body><header class="wrap nav"><a class="brand" href="#" style="text-decoration:none;color:var(--text)"><span class="logo">✳</span>ابزار<span>ینو</span></a><nav class="navlinks"><a href="#tools">ابزارها</a><a href="https://alishams.ir" target="_blank" rel="noopener noreferrer">درباره ما</a></nav><button id="theme" class="theme" type="button">☼ لایت مود</button></header>
 <main><section class="hero wrap"><canvas id="zenShader" aria-hidden="true"></canvas><div class="pill">✦ جعبه‌ابزار دیجیتال شما</div><h1>کارهای روزمره،<br><span class="gradient">ساده‌تر از همیشه</span></h1><p class="sub">ابزارهای رایگان و کاربردی فارسی؛ سریع، ساده و در دسترس.<br>ابزار موردنیازت رو بدون نصب برنامه پیدا و استفاده کن.</p><div class="search"><span>⌕</span><input id="search" placeholder="دنبال چه ابزاری می‌گردی؟ مثلاً محاسبه درصد..."></div><div class="stats"><span>✦ <b id="count">۱۲ ابزار</b></span><span>◈ بدون نیاز به نصب</span><span>✧ همیشه در دسترس</span></div></section>
 <section class="wrap" id="tools"><div class="head"><div><h2>ابزارهای کاربردی</h2><p>هر چیزی که لازم داری، همین‌جا پیدا می‌شه.</p></div><span class="muted" id="shown">۱۲ ابزار</span></div><div class="filterbar"><button class="filter-trigger" id="filterOpen" aria-haspopup="dialog" aria-controls="filterModal" aria-expanded="false"><span class="filter-trigger-icon" aria-hidden="true"><i class="fa-solid fa-sliders filter-grid-symbol"></i></span><span class="filter-trigger-copy"><b>دسته‌بندی ابزارها</b></span><span class="filter-chevron" aria-hidden="true"><span class="chevron-stem"></span><span class="chevron-stem"></span></span></button><span class="filter-count" id="filterCount">۶ دسته</span></div><div class="grid" id="grid"></div><div class="empty" id="empty">ابزاری پیدا نشد؛ عبارت دیگری امتحان کن.</div></section><section class="wrap" id="about"><div class="note privacy-note"><div class="privacy-orbit" aria-hidden="true"><span class="privacy-icon">⌁</span><i></i><i></i><i></i></div><div class="privacy-copy"><span class="privacy-label"><span class="privacy-live"></span> حریم خصوصی در اولویت</span><b>ساده، رایگان و تا جای ممکن خصوصی</b><p>بسیاری از ابزارهای ابزارینو مستقیماً داخل مرورگر اجرا می‌شن؛ اطلاعاتی که وارد می‌کنی برای این محاسبات به سرور ارسال نمی‌شن.</p></div><span class="privacy-spark" aria-hidden="true">✳</span></div></section></main><footer class="foot"><div class="wrap foot-inner"><div><div class="footer-brand">✳ ابزارینو</div><div class="footer-sub">ابزارهای کوچک برای کارهای بزرگ</div></div><a class="powered" href="https://alishams.ir" target="_blank" rel="noopener noreferrer" aria-label="Powered by Alishams.ir">POWERED BY ALISHAMS.IR</a></div></footer>
