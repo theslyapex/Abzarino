@@ -98,8 +98,61 @@ h3{font-weight:750;letter-spacing:-.015em}
 .primary,.secondary,.filter-trigger{font-weight:700}
 ::selection{background:#8b7cff55;color:var(--text)}
 @media(max-width:540px){h1{font-size:clamp(2rem,9vw,3rem)}.head h2{font-size:1.4rem}.card h3{font-size:1.08rem}}
+
+/* ZEN-inspired premium shader redesign for Abzarino */
+:root{--bg:#08090d;--panel:#101218;--panel2:#171a22;--text:#f4f2ed;--muted:#a2a5ae;--line:#292d38;--a:#b6a5ff;--b:#72e2d3}
+body.light{--bg:#f4f2ed;--panel:#fffefa;--panel2:#f0eee8;--text:#17181c;--muted:#656872;--line:#dedbd4;--a:#6551c9;--b:#087f75}
+body{background:var(--bg);font-size:15px}
+body:before{background:radial-gradient(ellipse at 15% 8%,#2b777733,transparent 35%),radial-gradient(ellipse at 88% 12%,#7a5ad833,transparent 36%);animation:zenAtmosphere 22s ease-in-out infinite alternate}
+@keyframes zenAtmosphere{0%{transform:translate3d(-1%,0,0) scale(1)}100%{transform:translate3d(2%,-1%,0) scale(1.08)}}
+.nav{height:76px;border-bottom-color:#ffffff18;position:relative;z-index:3;backdrop-filter:blur(16px)}
+.brand{font-size:1.2rem;letter-spacing:-.04em}
+.logo{border-radius:50%;width:36px;height:36px;background:linear-gradient(145deg,#d8d0ff,#6150ba);color:#12131a;box-shadow:0 0 28px #8b7cff30}
+.navlinks a{font-size:.86rem;transition:color .2s}
+.navlinks a:hover{color:var(--text)}
+.theme,.secondary{border-radius:999px;background:#ffffff08;border-color:#ffffff22;padding:8px 14px;font-size:.82rem;backdrop-filter:blur(16px)}
+.hero{position:relative;isolation:isolate;min-height:620px;padding:90px 0 54px;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;border-radius:0 0 34px 34px}
+#zenShader{position:absolute;inset:0;width:100%;height:100%;z-index:-2;opacity:.9;pointer-events:none}
+.hero:before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(180deg,#08090d22 0%,#08090d08 48%,var(--bg) 100%)}
+body.light .hero:before{background:linear-gradient(180deg,#f4f2ed20 0%,#f4f2ed05 48%,var(--bg) 100%)}
+.hero .pill{border:1px solid #ffffff28;background:#ffffff0a;color:var(--text);padding:7px 15px;backdrop-filter:blur(18px);box-shadow:0 0 35px #b6a5ff12;font-size:.78rem}
+h1{font-size:clamp(2.7rem,7.8vw,6rem);letter-spacing:-.065em;line-height:1.15;margin:28px 0 20px;text-shadow:0 8px 45px #0003}
+.gradient{background-image:linear-gradient(100deg,#e8e4ff 0%,#a9a1ff 25%,#6fe0d2 55%,#f0eee9 78%,#a9a1ff 100%);background-size:240% auto;animation:shimmerText 9s ease infinite}
+.sub{max-width:650px;font-size:clamp(.85rem,1.6vw,1rem);line-height:1.9;color:#f4f2ed;text-wrap:balance}
+body.light .sub{color:#fff}
+.search{position:relative;width:min(680px,100%);padding:9px 14px;border-radius:999px;background:#101218a8;border:1px solid #ffffff2a;box-shadow:0 18px 70px #0003,inset 0 1px #ffffff0a;backdrop-filter:blur(22px)}
+.search:focus-within{border-color:#b6a5ff99;box-shadow:0 0 0 4px #b6a5ff16,0 18px 70px #0003}
+.search input{font-size:.9rem}
+.stats{gap:10px 22px;color:#d0d0d7;font-size:.77rem}
+.head{margin:52px 0 18px;align-items:center}
+.head h2{font-size:clamp(1.45rem,3vw,2.1rem);letter-spacing:-.045em}
+.head p{font-size:.85rem}
+#tools{position:relative}
+.filterbar{margin-bottom:22px}
+.filter-trigger{border-radius:999px;padding:7px 12px;background:var(--panel);box-shadow:none}
+.filter-trigger-icon{border-radius:50%;background:#b6a5ff18;color:var(--a)}
+.filter-count{padding:7px 11px;border:1px solid var(--line);border-radius:99px}
+.grid{gap:12px}
+.card{min-height:195px;padding:20px;border-radius:20px;border-color:#ffffff17;background:linear-gradient(145deg,#14161de8,#0e1017ed);box-shadow:inset 0 1px #ffffff08,0 15px 50px #0000000c;backdrop-filter:blur(18px)}
+body.light .card{background:linear-gradient(145deg,#ffffffed,#f4f2edeb);border-color:#00000013}
+.card:after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;background:radial-gradient(circle at 100% 0,#b6a5ff12,transparent 45%);opacity:.8}
+.card h3{font-size:1.08rem;letter-spacing:-.025em}
+.card p{font-size:.82rem;line-height:1.85}
+.ico{border-radius:15px;background:linear-gradient(145deg,#ffffff10,#ffffff04);border:1px solid #ffffff12}
+.tag{letter-spacing:.01em}
+.go{font-size:.82rem}
+.card:hover{border-color:#b6a5ff66;box-shadow:0 22px 60px #0004,0 0 0 1px #b6a5ff12;transform:translateY(-5px)}
+.note{border-radius:22px;background:linear-gradient(120deg,#b6a5ff0b,#72e2d30a);border-color:#ffffff1b;backdrop-filter:blur(15px)}
+.modal{background:#05060ad9;backdrop-filter:blur(18px)}
+.box{border-radius:24px;background:color-mix(in srgb,var(--panel) 94%,transparent);border-color:#ffffff20;backdrop-filter:blur(24px)}
+.mh{background:color-mix(in srgb,var(--panel) 92%,transparent)}
+.primary{background:linear-gradient(105deg,#8c7af2,#5f50bc);border-radius:999px}
+.field input,.field textarea,.field select{border-radius:13px}
+.foot{border-top-color:#ffffff12}
+@media(max-width:700px){.nav{height:66px}.hero{min-height:0;padding:68px 0 38px;border-radius:0 0 25px 25px}.hero .pill{font-size:.72rem}h1{font-size:clamp(2.45rem,10vw,3.7rem);letter-spacing:-.055em;margin:24px 0 18px}.sub{max-width:95%;font-size:.85rem;line-height:1.9}.stats{gap:9px 13px}.head{margin-top:35px}.card{min-height:165px}.grid{gap:10px}}
+@media(prefers-reduced-motion:reduce){#zenShader{display:none}}
 </style></head><body><header class="wrap nav"><a class="brand" href="#" style="text-decoration:none;color:var(--text)"><span class="logo">✳</span>ابزار<span>ینو</span></a><nav class="navlinks"><a href="#tools">ابزارها</a><a href="#about">درباره ما</a></nav><button id="theme" class="theme" type="button">☼ لایت مود</button></header>
-<main><section class="hero wrap"><div class="pill">✦ جعبه‌ابزار دیجیتال شما</div><h1>کارهای روزمره،<br><span class="gradient">ساده‌تر از همیشه</span></h1><p class="sub">ابزارهای رایگان و کاربردی فارسی؛ سریع، ساده و در دسترس.<br>ابزار موردنیازت رو بدون نصب برنامه پیدا و استفاده کن.</p><div class="search"><span>⌕</span><input id="search" placeholder="دنبال چه ابزاری می‌گردی؟ مثلاً محاسبه درصد..."></div><div class="stats"><span>✦ <b id="count">۱۲ ابزار</b></span><span>◈ بدون نیاز به نصب</span><span>⌁ مناسب موبایل و کامپیوتر</span></div></section>
+<main><section class="hero wrap"><canvas id="zenShader" aria-hidden="true"></canvas><div class="pill">✦ جعبه‌ابزار دیجیتال شما</div><h1>کارهای روزمره،<br><span class="gradient">ساده‌تر از همیشه</span></h1><p class="sub">ابزارهای رایگان و کاربردی فارسی؛ سریع، ساده و در دسترس.<br>ابزار موردنیازت رو بدون نصب برنامه پیدا و استفاده کن.</p><div class="search"><span>⌕</span><input id="search" placeholder="دنبال چه ابزاری می‌گردی؟ مثلاً محاسبه درصد..."></div><div class="stats"><span>✦ <b id="count">۱۲ ابزار</b></span><span>◈ بدون نیاز به نصب</span><span>⌁ مناسب موبایل و کامپیوتر</span></div></section>
 <section class="wrap" id="tools"><div class="head"><div><h2>ابزارهای کاربردی</h2><p>هر چیزی که لازم داری، همین‌جا پیدا می‌شه.</p></div><span class="muted" id="shown">۱۲ ابزار</span></div><div class="filterbar"><button class="filter-trigger" id="filterOpen" aria-haspopup="dialog" aria-controls="filterModal"><span class="filter-trigger-icon">☷</span><span><b>دسته‌بندی ابزارها</b><small id="activeFilterLabel">نمایش همه ابزارها</small></span><span class="filter-chevron">⌄</span></button><span class="filter-count" id="filterCount">۶ دسته</span></div><div class="grid" id="grid"></div><div class="empty" id="empty">ابزاری پیدا نشد؛ عبارت دیگری امتحان کن.</div></section><section class="wrap" id="about"><div class="note"><b>💡 ساده، رایگان و تا جای ممکن خصوصی</b><p>بسیاری از ابزارهای ابزارینو مستقیماً داخل مرورگر اجرا می‌شن؛ اطلاعاتی که وارد می‌کنی برای این محاسبات به سرور ارسال نمی‌شن.</p></div></section></main><footer class="foot"><div class="wrap foot-inner"><div><div class="footer-brand">✳ ابزارینو</div><div class="footer-sub">ابزارهای کوچک برای کارهای بزرگ</div></div><a class="powered" href="https://alishams.ir" target="_blank" rel="noopener noreferrer" aria-label="Powered by Alishams.ir">POWERED BY ALISHAMS.IR</a></div></footer>
 <div class="modal" id="modal" role="dialog" aria-modal="true"><div class="box"><div class="mh"><h2 id="title">ابزار</h2><button class="close" id="close">×</button></div><div class="mb" id="body"></div></div></div>
 <div class="modal filter-modal" id="filterModal" role="dialog" aria-modal="true" aria-labelledby="filterTitle">
@@ -169,4 +222,6 @@ if(id==='date')$('#calc').onclick=()=>{if(!$('#d1').value||!$('#d2').value)retur
 if(id==='image')$('#calc').onclick=()=>{let file=$('#file').files[0],w=n('w'),h=n('h');if(!file)return toast('یک تصویر انتخاب کن.');if(w<1||h<1||w>6000||h>6000)return toast('ابعاد باید بین ۱ تا ۶۰۰۰ باشند.');let im=new Image(),url=URL.createObjectURL(file);im.onload=()=>{let c=document.createElement('canvas');c.width=w;c.height=h;c.getContext('2d').drawImage(im,0,0,w,h);URL.revokeObjectURL(url);c.toBlob(blob=>{let a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='abzarino-image';a.click();result('<b>تصویر آماده شد و دانلود شروع شد.</b>')},$('#format').value,.92)};im.src=url};
 if(id==='todo'){let a=[];try{a=JSON.parse(localStorage.getItem('abzarino-tasks')||'[]')}catch(e){}const draw=()=>{$('#tasks').innerHTML=a.map((x,i)=>'<p><label><input type="checkbox" data-i="'+i+'" '+(x.done?'checked':'')+'> '+esc(x.text)+'</label> <button class="secondary" data-del="'+i+'">حذف</button></p>').join('');localStorage.setItem('abzarino-tasks',JSON.stringify(a))};$('#add').onclick=()=>{let s=$('#newtask').value.trim();if(!s)return toast('عنوان کار را بنویس.');a.push({text:s,done:false});$('#newtask').value='';draw()};$('#clear').onclick=()=>{if(confirm('همه کارها پاک شوند؟')){a=[];draw()}};$('#tasks').onchange=e=>{if(e.target.dataset.i!==undefined){a[+e.target.dataset.i].done=e.target.checked;draw()}};$('#tasks').onclick=e=>{if(e.target.dataset.del!==undefined){a.splice(+e.target.dataset.del,1);draw()}};draw()}}
 $('#grid').onclick=e=>{let b=e.target.closest('[data-id]');if(b)open(b.dataset.id)};function close(){modal.classList.remove('show');document.body.style.overflow=''}$('#close').onclick=close;modal.onclick=e=>{if(e.target===modal)close()};document.onkeydown=e=>{if(e.key==='Escape'){if(filterModal.classList.contains('show'))hideFilter();else close()}};render();
+</script><script>
+(()=>{const canvas=document.getElementById('zenShader');if(!canvas||!canvas.getContext)return;const ctx=canvas.getContext('2d');if(!ctx)return;let w=0,h=0,dpr=1,raf=0,paused=false;const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;function resize(){dpr=Math.min(window.devicePixelRatio||1,1.5);w=canvas.clientWidth;h=canvas.clientHeight;canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);ctx.setTransform(dpr,0,0,dpr,0,0)}function draw(t){if(paused)return;const time=t*.00018;ctx.clearRect(0,0,w,h);ctx.fillStyle=document.body.classList.contains('light')?'#c7c2d6':'#08090d';ctx.fillRect(0,0,w,h);const blobs=[{x:.18+Math.sin(time)*.12,y:.25+Math.cos(time*.8)*.08,r:.58,c1:'rgba(50,180,164,.28)',c2:'rgba(50,180,164,0)'},{x:.75+Math.cos(time*.7)*.12,y:.22+Math.sin(time)*.1,r:.62,c1:'rgba(133,105,224,.34)',c2:'rgba(133,105,224,0)'},{x:.48+Math.sin(time*.6)*.14,y:.75+Math.cos(time*.9)*.08,r:.5,c1:'rgba(205,194,255,.12)',c2:'rgba(205,194,255,0)'}];for(const b of blobs){const g=ctx.createRadialGradient(w*b.x,h*b.y,0,w*b.x,h*b.y,Math.max(w,h)*b.r);g.addColorStop(0,b.c1);g.addColorStop(1,b.c2);ctx.fillStyle=g;ctx.fillRect(0,0,w,h)}ctx.globalAlpha=.12;for(let i=0;i<7;i++){ctx.beginPath();const y=h*(.18+i*.11)+Math.sin(time*2+i*.6)*h*.025;ctx.moveTo(-30,y);for(let x=0;x<=w+40;x+=18){const yy=y+Math.sin(x*.009+time*4+i)*10+Math.sin(x*.021-time*2+i*.8)*5;ctx.lineTo(x,yy)}ctx.strokeStyle=i%2?'#c4bcff':'#7be4d8';ctx.lineWidth=i===3?1.4:.7;ctx.stroke()}ctx.globalAlpha=1;if(!reduced)raf=requestAnimationFrame(draw)}const observer=new IntersectionObserver(entries=>{paused=!entries[0].isIntersecting;if(!paused&&!reduced&&!raf)raf=requestAnimationFrame(draw);if(paused&&raf){cancelAnimationFrame(raf);raf=0}});resize();if(!reduced)raf=requestAnimationFrame(draw);else draw(0);observer.observe(canvas);window.addEventListener('resize',()=>{resize();if(reduced)draw(0)});document.addEventListener('visibilitychange',()=>{if(document.hidden){paused=true;cancelAnimationFrame(raf);raf=0}else{paused=false;if(!reduced)raf=requestAnimationFrame(draw)}})})();
 </script></body></html>
