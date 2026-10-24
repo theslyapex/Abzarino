@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://theslyapex.github.io/Abzarino/sitemap.xml
